@@ -518,6 +518,7 @@ void wait_start(void) {
       tx_off();
       press = p_none;
     }
+    MANIP=ON;
     //__wait_for_interrupt();
   }
   RTC_CR2_ALRAIE = 1;      // Enable RTC Alarm interrupt
@@ -642,8 +643,6 @@ bool fox_setup(void) {
     tx_wup_se_hi = HIBYTE(tmp);
     tx_wup_se_lo = LOBYTE(tmp);
   }
-
-  MANIP=ON;
 
   return status;
 }
